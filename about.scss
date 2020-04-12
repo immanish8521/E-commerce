@@ -1,0 +1,86 @@
+@import "compass/css3";
+
+// Base Styles
+body,
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+// Nav
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #212121;
+
+    ul li {
+        display: inline-block;
+
+        a {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.875rem;
+            display: block;
+            text-decoration: none;
+            padding: 6px 15px;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+// Sections
+section {
+    height: 100%;
+    width: 100%;
+    display: table;
+    pointer-events: none;
+    z-index: 0;
+    -webkit-transition: transform 0.45s cubic-bezier(0, 0, 0.21, 1);
+    transition: transform 0.45s cubic-bezier(0, 0, 0.21, 1);
+
+    h1 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        color: #fff;
+        font-weight: lighter;
+    }
+}
+
+#one {
+    background: #2196F3;
+}
+
+#two {
+    background: #00BCD4;
+}
+
+#three {
+    background: #673AB7;
+}
+
+
+// Smooth Scroll
+a[id="one"]:target~#one {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+a[id="two"]:target~#two {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+
+a[id="three"]:target~#three {
+    -webkit-transform: translate3d(0, -200%, 0);
+    transform: translate3d(0, -200%, 0);
+}
